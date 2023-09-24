@@ -26,7 +26,8 @@ Perform 2D cross-correlation.
 
 ```python
 from ml_funcs import convolution2d
-convolution2d(input_matrix: np.ndarray, kernel: np.ndarray, stride: int = 1)
+result = convolution2d(
+    input_matrix: np.ndarray, kernel: np.ndarray, stride: int = 1)
 ```
 
 
@@ -46,7 +47,8 @@ Generate a list of windows from a 1D array or list.
 
 ```python
 from ml_funcs import window1d
-window1d(input_array: list | np.ndarray, size: int, shift: int = 1, stride: int = 1)
+result = window1d(
+    input_array: list | np.ndarray, size: int, shift: int = 1, stride: int = 1)
 ```
 
 
