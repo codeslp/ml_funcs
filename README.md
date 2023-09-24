@@ -37,7 +37,7 @@ Transposes a 2D matrix.
 
 ```python
 from ml_funcs import transpose2d
-result = transpose2d(input_matrix: list[list[float]])
+result = transpose2d(input_matrix: list[list[int]])
 ```
 
 
