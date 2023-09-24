@@ -3,7 +3,7 @@ import numpy as np
 
 def window1d(
     input_array: list | np.ndarray, size: int, shift: int = 1, stride: int = 1
-) -> list[list | np.ndarray]:
+) -> list[list]:
     """
     Generate a list of windows from a 1D array or list.
 
