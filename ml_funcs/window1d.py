@@ -14,7 +14,7 @@ def window1d(
     - stride (int, optional): The stride (or step size) for elements within each window. Defaults to 1.
 
     Returns:
-    - list[list | np.ndarray]: A list of windows, each of which is a list or np.ndarray.
+    - list[list]: A list of windows, each of which is a list.
 
     Examples:
     >>> window1d([1, 2, 3, 4, 5, 6], 2)
