@@ -26,17 +26,17 @@ Perform 2D cross-correlation.
 
 ```python
 from ml_funcs import convolution2d
-result = convolution2d(input_matrix, kernel)
+convolution2d(input_matrix: np.ndarray, kernel: np.ndarray, stride: int = 1)
 ```
 
 
-### transpose
+### transpose2d
 
 Transposes a 2D matrix.
 
 ```python
-from ml_funcs import transpose
-result = transpose(input_matrix)
+from ml_funcs import transpose2d
+result = transpose2d(input_matrix: list[list[float]])
 ```
 
 
@@ -46,7 +46,7 @@ Generate a list of windows from a 1D array or list.
 
 ```python
 from ml_funcs import window1d
-result = window1d(input_array, size)
+window1d(input_array: list | np.ndarray, size: int, shift: int = 1, stride: int = 1)
 ```
 
 
