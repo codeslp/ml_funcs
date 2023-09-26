@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ml-funcs"
+name = "ml-functions"
 version = "0.1.0"
 description = ""
 authors = ["Brian Farish <brian.farish@gmail.com>"]
