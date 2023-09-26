@@ -24,6 +24,11 @@ poetry install
 
 Perform 2D cross-correlation.
 
+Image Feature Extraction:
+
+Convolution operations are fundamental to Convolutional Neural Networks (CNNs). Before feeding an image into a CNN, it might be preprocessed using various kernels to extract features like edges, textures, and corners. For instance, you might use a Sobel filter to detect edges in an image.
+
+
 ```python
 from ml_funcs import convolution2d
 result = convolution2d(
@@ -35,6 +40,12 @@ result = convolution2d(
 
 Transposes a 2D matrix.
 
+Matrix Operations in Neural Networks:
+
+While designing neural networks, especially fully connected layers or when visualizing certain types of data, you may need to transpose weight matrices or the input matrix itself to match the required shape for matrix multiplication.
+
+For example, if you have an input vector x of shape (m, 1) and weight matrix W of shape (n, m), then before you perform the dot product, you might need to transpose W to make it of shape (m, n).
+
 ```python
 from ml_funcs import transpose2d
 result = transpose2d(input_matrix: list[list[int]])
@@ -44,6 +55,10 @@ result = transpose2d(input_matrix: list[list[int]])
 ### window1d
 
 Generate a list of windows from a 1D array or list.
+
+Time Series Analysis:
+
+When working with time series data, it's often necessary to break the series down into smaller overlapping or non-overlapping windows for analysis. This is particularly useful for tasks like anomaly detection, where you'd want to compute statistics like mean and standard deviation for local windows to identify anomalies.
 
 ```python
 from ml_funcs import window1d
