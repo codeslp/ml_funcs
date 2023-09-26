@@ -18,6 +18,8 @@ Then, run:
 poetry install
 ```
 
+This package is also available on pypi: https://pypi.org/project/ml-functions/
+
 ## Usage
 
 ### convolution2d
