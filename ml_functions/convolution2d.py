@@ -24,9 +24,22 @@ def convolution2d(
            [-3.,  -4.]])
     """
 
-    h, w = kernel.shape
-    Y = np.zeros((input_matrix.shape[0] - h + 1, input_matrix.shape[1] - w + 1))
-    for i in range(Y.shape[0]):
-        for j in range(Y.shape[1]):
-            Y[i, j] = (input_matrix[i : i + h, j : j + w] * kernel).sum()
-    return Y
+    if not isinstance(input_matrix, np.ndarray):
+        raise TypeError("input_matrix must be a numpy ndarray.")
+    if not isinstance(kernel, np.ndarray):
+        raise TypeError("kernel must be a numpy ndarray.")
+    if not isinstance(stride, int) or stride <= 0:
+        raise ValueError("stride must be a positive integer.")
+    if input_matrix.ndim != 2:
+        raise ValueError("input_matrix must be a 2D array.")
+    if kernel.ndim != 2:
+        raise ValueError("kernel must be a 2D array.")
+    if kernel.shape[0] > input_matrix.shape[0] or kernel.shape[1] > input_matrix.shape[1]:
+        raise ValueError("kernel dimensions must be less than or equal to those of the input_matrix.")
+    
+    height, width = kernel.shape
+    output_matrix = np.zeros((input_matrix.shape[0] - height + 1, input_matrix.shape[1] - width + 1))
+    for i in range(output_matrix.shape[0]):
+        for j in range(output_matrix.shape[1]):
+            output_matrix[i, j] = (input_matrix[i : i + height, j : j + width] * kernel).sum()
+    return output_matrix
