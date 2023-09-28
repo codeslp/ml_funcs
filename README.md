@@ -26,6 +26,9 @@ This package is also available on pypi: https://pypi.org/project/ml-functions/
 
 Perform 2D cross-correlation.
 
+The convolution2d function slides a kernel over the input matrix, computes the element-wise product of the kernel and the corresponding sub-matrix at each position, and sums up these products. It utilizes nested loops to iterate over the rows and columns of the output matrix, extracting sub-matrices from the input matrix and performing element-wise multiplication with the kernel.
+
+
 Image Feature Extraction:
 
 Convolution operations are fundamental to Convolutional Neural Networks (CNNs). Before feeding an image into a CNN, it might be preprocessed using various kernels to extract features like edges, textures, and corners. For instance, you might use a Sobel filter (used in edge detection to detect brightness changes) to detect edges in an image.
@@ -68,4 +71,6 @@ result = window1d(
     input_array: list | np.ndarray, size: int, shift: int = 1, stride: int = 1)
 ```
 
+### Tests
 
+Basic tests for the functions in the package are included in the tests directory. Each function has corresponding test cases that are designed to verify the accuracy and efficiency of the functions under different circumstances. Error testing has yet to be added.
