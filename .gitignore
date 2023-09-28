@@ -1,6 +1,6 @@
 *.csv
 .DS_Store
-
+convolution2d_notes.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
