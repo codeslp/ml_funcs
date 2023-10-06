@@ -4,7 +4,7 @@ from typing import List
 
 def window1d(
     input_array: List | np.ndarray, size: int, shift: int = 1, stride: int = 1
-) -> List[List[float]]:
+) -> List[List[float]] | np.ndarray:
     
     """
     Generate a list of windows from a 1D array or list.
@@ -39,12 +39,14 @@ def window1d(
     if not isinstance(stride, int) or stride <= 0:
         raise ValueError("stride must be a positive integer.")
     
+        
     windows = []
-    i = 0
-    while i + (size * stride) - stride < len(input_array):
-        window = [input_array[i + (j * stride)] for j in range(size)]
+    for i in range(0, len(input_array) - (size-1)*stride, shift):
+        window = input_array[i:i+size*stride:stride]
+        if isinstance(input_array, list):
+            window = list(window)
         windows.append(window)
-        i += shift
+
     if isinstance(input_array, list):
         return windows
     else:
