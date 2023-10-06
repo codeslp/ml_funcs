@@ -32,14 +32,4 @@ def transpose2d(input_matrix: List[List[float]]) -> List[List[float]]:
     if not all(len(row) == len(input_matrix[0]) for row in input_matrix):
         raise ValueError("All rows in input_matrix must have the same length.")
 
-
-    num_rows = len(input_matrix)
-    num_cols = len(input_matrix[0])
-
-    transposed = [[None] * num_rows for _ in range(num_cols)]
-
-    for i in range(num_rows):
-        for j in range(num_cols):
-            transposed[j][i] = input_matrix[i][j]
-
-    return transposed
+    return [list(row) for row in zip(*input_matrix)]
